@@ -1334,13 +1334,15 @@ function _uploadLittlefsEspToolPy(esptool, commPort, littlefsImage, littlefsOpti
     const before = getVscodeConfigValue(ESP8266FS_ESPTOOL_PY_BEFORE) || "default_reset";
     const after = getVscodeConfigValue(ESP8266FS_ESPTOOL_PY_AFTER) || "hard_reset";
 
-    const flashMode = target.flashMode;
-    const flashFreq = target.flashFreq;
-    //const flashSize = target.flashSize || "detect";
-	//const flashSize = target.flashSize;
-	//const flashFreq = "40m";
+    // 2.7.4: const flashMode = target.flashMode;
+    // 3.0.0
+    const flashMode = "dout";
+    
+    // 2.7.4: const flashFreq = target.flashFreq;
+    // 3.0.0
+    const flashFreq = "40m";
 	const flashSize = "detect";
-	// Spundomat
+	
     logImportant(`LITTLEFS Uploading Image... (${littlefsImage})`);
     logLittlefs(`Python   : ${python}`);
     logLittlefs(`EspTool  : ${esptool}`);
