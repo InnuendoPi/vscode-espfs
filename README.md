@@ -2,7 +2,8 @@
 
 > **Note by InnuendoPi:** This is a test fork. Please use original repository: <https://github.com/kash4kev/vscode-esp8266fs>
 
-Added: Littlefs pack, unpack, list, visualize and upload (only tested with ESP8266!)
+Added: LittleFS pack, unpack, list, visualize and upload (only tested with ESP8266!)
+Added: LittleFS pack and upload ESP32 (ESP8266 keywords)
 
 Follow these steps to install:
 
