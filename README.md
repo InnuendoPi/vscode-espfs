@@ -14,7 +14,7 @@ Follow these steps to install:
 - navigate into directory kash4kev.vscode-esp8266fs-1.<x.x>
 - rename esp8266fs.js to esp8266fs.ori
 - rename package.json to package.ori
-- copy esp8266fs.js and package.json from repositroy into ESP8266FS extension folder
+- copy esp8266fs.js and package.json from repository into ESP8266FS extension folder
 - start Visual code
 
 New keywords:
