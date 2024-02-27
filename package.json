@@ -1,6 +1,6 @@
 {
 	"name": "vscode-esp8266fs",
-	"displayName": "ESP8266FS",
+	"displayName": "ESP-FS",
 	"description": "Visual Studio Code extension for ESP8266/ESP32 File System (SPIFFS/LITTLEFS)",
 	"version": "1.1.0",
 	"preview": false,
@@ -53,56 +53,56 @@
 		"commands": [
 			{
 				"command": "esp8266fs.uploadSpiffs",
-				"title": "ESP8266FS: Upload SPIFFS"
+				"title": "ESP-FS: Upload SPIFFS"
 			},
 			{
 				"command": "esp8266fs.downloadSpiffs",
-				"title": "ESP8266FS: Download SPIFFS"
+				"title": "ESP-FS: Download SPIFFS"
 			},
 			{
 				"command": "esp8266fs.packSpiffs",
-				"title": "ESP8266FS: Pack SPIFFS"
+				"title": "ESP-FS: Pack SPIFFS"
 			},
 			{
 				"command": "esp8266fs.unpackSpiffs",
-				"title": "ESP8266FS: Unpack SPIFFS"
+				"title": "ESP-FS: Unpack SPIFFS"
 			},
 			{
 				"command": "esp8266fs.listSpiffs",
-				"title": "ESP8266FS: List SPIFFS"
+				"title": "ESP-FS: List SPIFFS"
 			},
 			{
 				"command": "esp8266fs.visualizeSpiffs",
-				"title": "ESP8266FS: Visualize SPIFFS"
+				"title": "ESP-FS: Visualize SPIFFS"
 			},
 			{
 				"command": "esp8266fs.uploadLittlefs",
-				"title": "ESP8266FS: Upload LITTLEFS"
+				"title": "ESP-FS: Upload LITTLEFS"
 			},
 			{
 				"command": "esp8266fs.downloadLittlefs",
-				"title": "ESP8266FS: Download LITTLEFS"
+				"title": "ESP-FS: Download LITTLEFS"
 			},
 			{
 				"command": "esp8266fs.packLittlefs",
-				"title": "ESP8266FS: Pack LITTLEFS"
+				"title": "ESP-FS: Pack LITTLEFS"
 			},
 			{
 				"command": "esp8266fs.unpackLittlefs",
-				"title": "ESP8266FS: Unpack LITTLEFS"
+				"title": "ESP-FS: Unpack LITTLEFS"
 			},
 			{
 				"command": "esp8266fs.listLittlefs",
-				"title": "ESP8266FS: List LITTLEFS"
+				"title": "ESP-FS: List LITTLEFS"
 			},
 			{
 				"command": "esp8266fs.visualizeLittlefs",
-				"title": "ESP8266FS: Visualize LITTLEFS"
+				"title": "ESP-FS: Visualize LITTLEFS"
 			}
 		],
 		"configuration": {
 			"type": "object",
-			"title": "ESP8266FS Configuration",
+			"title": "ESP-FS Configuration",
 			"properties": {
 				"esp8266fs.dataFiles": {
 					"type": "string",
