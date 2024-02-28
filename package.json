@@ -2,11 +2,11 @@
 	"name": "vscode-esp8266fs",
 	"displayName": "ESP-FS",
 	"description": "Visual Studio Code extension for ESP8266/ESP32 File System (SPIFFS/LITTLEFS)",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"preview": false,
-	"publisher": "kash4kev",
+	"publisher": "InnuendoPi",
 	"engines": {
-		"vscode": "^1.19.0"
+		"vscode": "^1.86.0"
 	},
 	"license": "SEE LICENSE IN LICENSE.txt",
 	"icon": "images/esp8266fs.png",
@@ -16,12 +16,11 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/kash4kev/vscode-esp8266fs.git"
+		"url": "https://github.com/InnuendoPi/vscode-esp8266fs.git"
 	},
-	"homepage": "https://github.com/kash4kev/vscode-esp8266fs/blob/master/README.md",
+	"homepage": "https://github.com/InnuendoPi/vscode-esp8266fs/blob/master/README.md",
 	"bugs": {
-		"url": "https://github.com/kash4kev/vscode-esp8266fs/issues",
-		"email": "kash4kev@gmail.com"
+		"url": "https://github.com/InnuendoPi/vscode-esp8266fs/issues"
 	},
 	"categories": [
 		"Other"
@@ -261,17 +260,5 @@
 				}
 			}
 		}
-	},
-	"devDependencies": {
-		"vscode": "^1.1.17"
-	},
-	"dependencies": {
-		"tmp": "0.0.33",
-		"winreg": "^1.2.4"
-	},
-	"__metadata": {
-		"id": "0b6421f4-e372-48ca-9a75-a35754911ed3",
-		"publisherDisplayName": "kash4kev",
-		"publisherId": "1f4f80d9-f54d-4c7d-b679-81ecf922f372"
 	}
 }

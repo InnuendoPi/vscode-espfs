@@ -548,7 +548,6 @@ function getEspPackagePath(arduinoUserPath, preferencesPath, target) {
         }
 
         case "esp32": {
-            // const esp32Path = path.join(arduinoUserPath, "hardware", target.package, target.architecture);
             const dir = path.join(preferencesPath, "packages", target.package, "hardware", target.architecture);
             if (!dirExists(dir))
                 throw `ESP32 has not been installed correctly - see https://github.com/espressif/arduino-esp32. ` + dir;
@@ -728,7 +727,6 @@ function getEspToolsPath(arduinoUserPath, preferencesPath, target) {
 
     const dir = target.architecture == "esp8266"
         ? path.resolve(path.join(preferencesPath, "packages", target.architecture, "tools"))
-        //: path.resolve(path.join(arduinoUserPath, "hardware", target.package, target.architecture, "tools"));
         : path.resolve(path.join(preferencesPath, "packages", target.architecture, "tools"))
 
     if (!dirExists(dir))
@@ -1084,7 +1082,7 @@ function listLittlefs(mklittlefs, littlefsOptions, littlefsImage) {
 }
 
 //------------------------------------------------------------------------------
-
+// not yet working
 function visualizeLittlefs(mklittlefs, littlefsOptions, littlefsImage) {
     log(`--- Visualize LITTLEFS file ---`);
 
@@ -1276,7 +1274,6 @@ function _uploadSpiffsEspToolPy(esptool, commPort, spiffsImage, spiffsOptions, t
     //const flashSize = target.flashSize;
     //const flashFreq = "40m";
     const flashSize = "detect";
-    // Spundomat
     logImportant(`SPIFFS Uploading Image... (${spiffsImage})`);
     logSpiffs(`Python   : ${python}`);
     logSpiffs(`EspTool  : ${esptool}`);
@@ -1347,8 +1344,7 @@ function _uploadLittlefsEspToolPy(esptool, commPort, littlefsImage, littlefsOpti
     var uploadSpeed = "921600";
     if (littlefsOptions.speed) // != "undefined")
         uploadSpeed = stringToInt(littlefsOptions.speed);
-    //const uploadSpeed = "921600";
-    //log(`Speed   : ${uploadSpeed}`);
+
     const resetMethod = littlefsOptions.resetmethod;
     const before = getVscodeConfigValue(ESP8266FS_ESPTOOL_PY_BEFORE) || "default_reset";
     const after = getVscodeConfigValue(ESP8266FS_ESPTOOL_PY_AFTER) || "hard_reset";
@@ -1365,13 +1361,9 @@ function _uploadLittlefsEspToolPy(esptool, commPort, littlefsImage, littlefsOpti
 
     const flashSize = "detect";
 
-    //const flashMode = "dio";
-    //const flashFreq = "80m";
-    //const flashSize = "4MB";
-
-    //const flashMode = target.flashMode;
-    //const flashFreq = target.flashFreq;
-    //    const flashSize = target.flashSize || "detect";
+    // const flashMode = target.flashMode;
+    // const flashFreq = target.flashFreq;
+    // const flashSize = target.flashSize || "detect";
 
     logImportant(`LITTLEFS Uploading Image... (${littlefsImage})`);
     logLittlefs(`Python   : ${python}`);
