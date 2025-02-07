@@ -1,9 +1,9 @@
-node_modules
 .vscode/settings.json
 .eslintrc.json
 .vscode/**
 .vscode-test/**
 test/**
+backup/**
 .gitignore
 .yarnrc
 vsc-extension-quickstart.md

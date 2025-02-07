@@ -59,10 +59,6 @@ const ESPFS_ESPOTA_HOST_PORT = "espfs.espota.host.port"; // IP Port for Host
 const ESPFS_ESPOTA_AUTH      = "espfs.espota.auth";      // Authentication password for espota.py
 const ESPFS_ESPOTA_DEBUG     = "espfs.espota.debug";     // Enable debug output from espota.py
 
-/*const ESPFS_EESZ = "espfs.eesz";
-const ESPFS_FLASHMODE = "espfs.FlashMode";
-const ESPFS_FLASHFREQ = "espfs.FlashFreq";*/
-
 // #endregion
 
 //==============================================================================
@@ -755,7 +751,7 @@ function getEspToolsPath(arduinoUserPath, preferencesPath, target) {
 }
 
 //------------------------------------------------------------------------------
-// C:\Python\Python39
+
 function getPythonExecutable() {
     const python = getVscodeConfigValue(PYTHON_PYTHONPATH) || "python";
 
@@ -1113,15 +1109,6 @@ function getEspTool(target, espToolsPath) {
         }
 
         case "esp32": {
-            // //const esptoolPy = path.join(espToolsPath, program("esptool.py"));
-			//const esptoolPy = path.join(espToolsPath, program("esptool.exe"));
-
-            //if (!fileExists(esptoolPy))
-            //    throw `"Can't locate "${esptoolPy}"`;
-
-            //logVerbose(`esptool: ${CYAN}${esptoolPy}`);
-
-            //return esptoolPy;
 			const folders = getFolders(path.join(espToolsPath, "esptool"));
 
             if (folders.length != 1)
@@ -1240,11 +1227,9 @@ function _uploadSpiffsEspToolPy(esptool, commPort, spiffsImage, spiffsOptions, t
 
     const flashMode = target.flashMode;
     const flashFreq = target.flashFreq;
-    //const flashSize = target.flashSize || "detect";
-	//const flashSize = target.flashSize;
-	//const flashFreq = "40m";
-	const flashSize = "detect";
-	// Spundomat
+    const flashSize = target.flashSize || "detect";
+	// const flashSize = "detect";
+	
     logImportant(`SPIFFS Uploading Image... (${spiffsImage})`);
     logSpiffs(`Python   : ${python}`);
     logSpiffs(`EspTool  : ${esptool}`);
@@ -1307,39 +1292,24 @@ function _uploadSpiffsEspToolPy(esptool, commPort, spiffsImage, spiffsOptions, t
 
 
 function _uploadLittlefsEspToolPy(esptool, commPort, littlefsImage, littlefsOptions, target) {
-    log(`--- Uploading LITTLEFS file with esptool.py !!!---`);
 
     const python = getPythonExecutable();
     const uploadAddress = `0x` + toHex(stringToInt(littlefsOptions.spiffs_start), 6);
 	var uploadSpeed = "921600";
 	if (littlefsOptions.speed) // != "undefined")
 		uploadSpeed = stringToInt(littlefsOptions.speed);
-	//const uploadSpeed = "921600";
-	//log(`Speed   : ${uploadSpeed}`);
+
     const resetMethod = littlefsOptions.resetmethod;
     const before = getVscodeConfigValue(ESPFS_ESPTOOL_PY_BEFORE) || "default_reset";
     const after = getVscodeConfigValue(ESPFS_ESPTOOL_PY_AFTER) || "hard_reset";
-
-    // 2.7.4: const flashMode = target.flashMode;
-	const flashMode = "dout";
-	//const flashMode = "qio";
+    const flashMode = target.flashMode;
+    const flashFreq = target.flashFreq;
+    const flashSize = target.flashSize || "detect";
 	
-	// 2.7.4: const flashFreq = target.flashFreq;
-    //const flashFreq = "40m";
-	var flashFreq = target.flashFreq;
-	if (target.flashFreq == "m")
-		flashFreq = "40m";
-	
-	const flashSize = "detect";
-	
-	//const flashMode = "dio";
-	//const flashFreq = "80m";
-	//const flashSize = "4MB";
-	
-	//const flashMode = target.flashMode;
-    //const flashFreq = target.flashFreq;
-//    const flashSize = target.flashSize || "detect";
-	
+    // var flashFreq = target.flashFreq;
+	// if (target.flashFreq == "m")
+		// flashFreq = "40m";
+			
     logImportant(`LITTLEFS Uploading Image... (${littlefsImage})`);
     logLittlefs(`Python   : ${python}`);
     logLittlefs(`EspTool  : ${esptool}`);
