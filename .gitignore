@@ -1,3 +1,14 @@
 node_modules
 .vscode/settings.json
 .eslintrc.json
+.vscode/**
+.vscode-test/**
+test/**
+.gitignore
+.yarnrc
+vsc-extension-quickstart.md
+**/jsconfig.json
+**/*.map
+**/eslint.config.mjs
+**/.vscode-test.*
+

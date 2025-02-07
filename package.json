@@ -1,31 +1,16 @@
 {
-	"name": "vscode-esp8266fs",
-	"displayName": "ESP-FS",
-	"description": "Visual Studio Code extension for ESP8266/ESP32 File System (SPIFFS/LITTLEFS)",
-	"version": "1.2.0",
-	"preview": false,
-	"publisher": "InnuendoPi",
-	"engines": {
-		"vscode": "^1.86.0"
-	},
-	"license": "SEE LICENSE IN LICENSE.txt",
-	"icon": "images/esp8266fs.png",
-	"galleryBanner": {
-		"color": "#00C800",
-		"theme": "light"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/InnuendoPi/vscode-esp8266fs.git"
-	},
-	"homepage": "https://github.com/InnuendoPi/vscode-esp8266fs/blob/master/README.md",
-	"bugs": {
-		"url": "https://github.com/InnuendoPi/vscode-esp8266fs/issues"
-	},
-	"categories": [
-		"Other"
-	],
-	"keywords": [
+  "name": "espfs",
+  "displayName": "VSCODE-ESPFS",
+  "description": "Visual Studio Code extension for ESP8266/ESP32 File System (SPIFFS/LittleFS)",
+  "version": "0.0.1",
+  "publisher": "InnuendoPi",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
 		"ESP8266",
 		"ESP32",
 		"Arduino",
@@ -33,97 +18,59 @@
 		"LITTLEFS",
 		"esptool"
 	],
-	"activationEvents": [
-		"onCommand:esp8266fs.uploadSpiffs",
-		"onCommand:esp8266fs.downloadSpiffs",
-		"onCommand:esp8266fs.packSpiffs",
-		"onCommand:esp8266fs.unpackSpiffs",
-		"onCommand:esp8266fs.listSpiffs",
-		"onCommand:esp8266fs.visualizeSpiffs",
-		"onCommand:esp8266fs.uploadLittlefs",
-		"onCommand:esp8266fs.downloadLittlefs",
-		"onCommand:esp8266fs.packLittlefs",
-		"onCommand:esp8266fs.unpackLittlefs",
-		"onCommand:esp8266fs.listLittlefs",
-		"onCommand:esp8266fs.visualizeLittlefs"
-	],
-	"main": "./esp8266fs",
+	"main": "./espfs.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "esp8266fs.uploadSpiffs",
+				"command": "espfs.uploadSpiffs",
 				"title": "ESP-FS: Upload SPIFFS"
 			},
 			{
-				"command": "esp8266fs.downloadSpiffs",
-				"title": "ESP-FS: Download SPIFFS"
-			},
-			{
-				"command": "esp8266fs.packSpiffs",
+				"command": "espfs.packSpiffs",
 				"title": "ESP-FS: Pack SPIFFS"
 			},
 			{
-				"command": "esp8266fs.unpackSpiffs",
-				"title": "ESP-FS: Unpack SPIFFS"
-			},
-			{
-				"command": "esp8266fs.listSpiffs",
+				"command": "espfs.listSpiffs",
 				"title": "ESP-FS: List SPIFFS"
 			},
 			{
-				"command": "esp8266fs.visualizeSpiffs",
-				"title": "ESP-FS: Visualize SPIFFS"
-			},
-			{
-				"command": "esp8266fs.uploadLittlefs",
+				"command": "espfs.uploadLittlefs",
 				"title": "ESP-FS: Upload LITTLEFS"
 			},
 			{
-				"command": "esp8266fs.downloadLittlefs",
-				"title": "ESP-FS: Download LITTLEFS"
-			},
-			{
-				"command": "esp8266fs.packLittlefs",
+				"command": "espfs.packLittlefs",
 				"title": "ESP-FS: Pack LITTLEFS"
 			},
 			{
-				"command": "esp8266fs.unpackLittlefs",
-				"title": "ESP-FS: Unpack LITTLEFS"
-			},
-			{
-				"command": "esp8266fs.listLittlefs",
+				"command": "espfs.listLittlefs",
 				"title": "ESP-FS: List LITTLEFS"
-			},
-			{
-				"command": "esp8266fs.visualizeLittlefs",
-				"title": "ESP-FS: Visualize LITTLEFS"
 			}
 		],
 		"configuration": {
 			"type": "object",
 			"title": "ESP-FS Configuration",
 			"properties": {
-				"esp8266fs.dataFiles": {
+				"espfs.dataFiles": {
 					"type": "string",
 					"default": "./data",
 					"description": "Location of the files to be packed/unpacked to the SPIFFS/LITTLEFS image"
 				},
-				"esp8266fs.preferencesPath": {
+				"espfs.preferencesPath": {
 					"type": "string",
 					"default": "",
 					"description": "Location of the Arduino IDE's preferences.txt file"
 				},
-				"esp8266fs.spiffsImage": {
+				"espfs.spiffsImage": {
 					"type": "string",
 					"default": "./spiffs.image",
 					"description": "Name of the SPIFFS file to pack/unpack/upload"
 				},
-				"esp8266fs.littlefsImage": {
+				"espfs.littlefsImage": {
 					"type": "string",
 					"default": "./littlefs.image",
 					"description": "Name of the LITTLEFS file to pack/unpack/upload"
 				},
-				"esp8266fs.logLevel": {
+				"espfs.logLevel": {
 					"type": "string",
 					"default": "normal",
 					"enum": [
@@ -134,46 +81,46 @@
 					],
 					"description": "Change amount of \"spew\" sent to the console."
 				},
-				"esp8266fs.mkspiffs.executable": {
+				"espfs.mkspiffs.executable": {
 					"type": "string",
 					"default": "",
 					"description": "mkspiffs executable."
 				},
-				"esp8266fs.mklittlefs.executable": {
+				"espfs.mklittlefs.executable": {
 					"type": "string",
 					"default": "",
 					"description": "mklittlefs executable."
 				},
-				"esp8266fs.mkspiffs.debugLevel": {
+				"espfs.mkspiffs.debugLevel": {
 					"type": "integer",
 					"default": 0,
 					"minimum": 0,
 					"maximum": 5,
 					"description": "mkspiffs debug level."
 				},
-				"esp8266fs.mklittlefs.debugLevel": {
+				"espfs.mklittlefs.debugLevel": {
 					"type": "integer",
 					"default": 0,
 					"minimum": 0,
 					"maximum": 5,
 					"description": "mklittlefs debug level."
 				},
-				"esp8266fs.mkspiffs.allFiles": {
+				"espfs.mkspiffs.allFiles": {
 					"type": "boolean",
 					"default": false,
 					"description": "Specify if mkspiffs should pack hidden files."
 				},
-				"esp8266fs.mklittlefs.allFiles": {
+				"espfs.mklittlefs.allFiles": {
 					"type": "boolean",
 					"default": false,
 					"description": "Specify if mklittlefs should pack hidden files."
 				},
-				"esp8266fs.esptool.executable": {
+				"espfs.esptool.executable": {
 					"type": "string",
 					"default": "",
 					"description": "esptool executable."
 				},
-				"esp8266fs.esptool.verbosity": {
+				"espfs.esptool.verbosity": {
 					"type": "string",
 					"default": "",
 					"enum": [
@@ -184,7 +131,7 @@
 					],
 					"description": "esptool debug verbosity."
 				},
-				"esp8266fs.esptool.py.before": {
+				"espfs.esptool.py.before": {
 					"type": "string",
 					"default": "default_reset",
 					"enum": [
@@ -193,7 +140,7 @@
 					],
 					"description": "esptool.py before parameter."
 				},
-				"esp8266fs.esptool.py.after": {
+				"espfs.esptool.py.after": {
 					"type": "string",
 					"default": "hard_reset",
 					"enum": [
@@ -203,62 +150,74 @@
 					],
 					"description": "esptool.py after parameter."
 				},
-				"esp8266fs.esptool.py.noStub": {
+				"espfs.esptool.py.noStub": {
 					"type": "boolean",
 					"default": "false",
 					"description": "esptool.py disable launching flasher stub."
 				},
-				"esp8266fs.esptool.py.trace": {
+				"espfs.esptool.py.trace": {
 					"type": "boolean",
 					"default": "false",
 					"description": "esptool.py trace output."
 				},
-				"esp8266fs.esptool.py.spi_connection": {
+				"espfs.esptool.py.spi_connection": {
 					"type": "string",
 					"default": "",
 					"description": "esptool.py override for SPI Flash connection."
 				},
-				"esp8266fs.esptool.py.compress": {
+				"espfs.esptool.py.compress": {
 					"type": "boolean",
 					"default": "true",
 					"description": "esptool.py trace output."
 				},
-				"esp8266fs.esptool.py.verify": {
+				"espfs.esptool.py.verify": {
 					"type": "boolean",
 					"default": "false",
 					"description": "esptool.py verify write."
 				},
-				"esp8266fs.espota.py": {
+				"espfs.espota.py": {
 					"type": "string",
 					"default": "",
 					"description": "espota.py script."
 				},
-				"esp8266fs.espota.esp.port": {
+				"espfs.espota.esp.port": {
 					"type": "integer",
 					"default": "",
 					"description": "Target ESP8266 IP port."
 				},
-				"esp8266fs.espota.host.ip": {
+				"espfs.espota.host.ip": {
 					"type": "string",
 					"default": "",
 					"description": "Host IP address."
 				},
-				"esp8266fs.espota.host.port": {
+				"espfs.espota.host.port": {
 					"type": "integer",
 					"default": "",
 					"description": "Host IP port."
 				},
-				"esp8266fs.espota.auth": {
+				"espfs.espota.auth": {
 					"type": "string",
 					"default": "",
 					"description": "Authentication password."
 				},
-				"esp8266fs.espota.debug": {
+				"espfs.espota.debug": {
 					"type": "boolean",
 					"default": false,
 					"description": "Enable debug output."
 				}
 			}
 		}
+	},
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.19.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  },
+  	"dependencies": {
+		"tmp": "0.0.33",
+		"winreg": "^1.2.4"
 	}
 }

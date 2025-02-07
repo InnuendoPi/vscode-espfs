@@ -1,47 +1,7 @@
 # Change Log
 
-All notable changes to the "vscode-esp8266fs" extension will be documented in this file.
+All notable changes to the "espfs" extension will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+## [0.0.1] 2025-02-07
 
-## [1.2.0] 2024-2-28
-
-* Publish new version with LittleFS support
-
-## [1.1.0] 2018-5-18
-
-* Added support for the ESP32 library package (espressif/esp32).
-* Added support for "esptool.py" found in the ESP32 library.
-* FlashSize now supports "generic" settings.
-* Changed package.json "keyword" from "iot" -> "ESP32".
-* "esp8266fs.upload" now only uploads - pack is done separately.
-* Added "espspiffs.download" for user of "esptool.py".
-* Added "esp8266fs.arduinoUserPath" setting.
-* Added "esp8266fs.esptool.py..." settings.
-* Removed unnecessary code.
-
-## [1.0.1] 2018-4-7
-
-* Fixed errata and ran **markdownlint** on all .md files.
-* Fixed all missing overrides.  Expanded OTA overrides.
-* Added `esp8266.packSpiffs` command.
-* Made showErrorMessage modal.
-* Added "#region" tags to source code.
-* Refactored "upload" to minimize external tool requirements.
-* Removed `esp8266fs.python`, defering to `python.pythonPath`.
-
-## [1.0.0] 2018-2-13
-
-* Fixed errata and expanded documentation.
-* Located espota.py correctly.
-* Changed `esp8266fs.uploadData` -> `esp8266fs.uploadSpiffs`.
-* Added `esp8266fs.unpackSpiffs`, `esp8266fs.listSpiffs`, and `esp8266fs.visualizeSpiffs`.
-* Added a variety of settings.json values to allow full control of the mkspiffs *rocess.
-* Fixed various bugs and cleaned up code heirarchy.
-* Updated Github infrastructure.
-* Tested on Windows, OSX, and Linux (Ubuntu).
-
-## [0.9.0] - 2018-02-11
-
-* Initial release - out for review.
+* Initial mod release - out for review.
