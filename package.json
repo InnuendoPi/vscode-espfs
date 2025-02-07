@@ -1,16 +1,24 @@
 {
-  "name": "espfs",
-  "displayName": "VSCODE-ESPFS",
-  "description": "Visual Studio Code extension for ESP8266/ESP32 File System (SPIFFS/LittleFS)",
-  "version": "0.0.1",
-  "publisher": "InnuendoPi",
-  "engines": {
-    "vscode": "^1.96.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "keywords": [
+	"name": "espfs",
+	"displayName": "VSCODE-ESPFS",
+	"description": "Visual Studio Code extension for ESP8266/ESP32 File System (SPIFFS/LittleFS)",
+	"version": "0.0.2",
+	"publisher": "InnuendoPi",
+	"engines": {
+		"vscode": "^1.96.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/InnuendoPi/vscode-espfs.git"
+	},
+	"homepage": "https://github.com/InnuendoPi/vscode-espfs/blob/master/README.md",
+	"bugs": {
+		"url": "https://github.com/InnuendoPi/vscode-espfs/issues"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
 		"ESP8266",
 		"ESP32",
 		"Arduino",
@@ -18,7 +26,15 @@
 		"LITTLEFS",
 		"esptool"
 	],
-	"main": "espfs.js",
+	"activationEvents": [
+		"onCommand:esp8266fs.uploadLittlefs",
+		"onCommand:esp8266fs.packLittlefs",
+		"onCommand:esp8266fs.listLittlefs",
+		"onCommand:esp8266fs.uploadSpiffs",
+		"onCommand:esp8266fs.packSpiffs",
+		"onCommand:esp8266fs.listSpiffs"
+	],
+	"main": "./espfs.js",
 	"contributes": {
 		"commands": [
 			{
@@ -208,15 +224,15 @@
 			}
 		}
 	},
-  "devDependencies": {
-    "@types/vscode": "^1.96.0",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "20.x",
-    "eslint": "^9.19.0",
-    "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
-  },
-  	"dependencies": {
+	"devDependencies": {
+		"@types/vscode": "^1.96.0",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "20.x",
+		"eslint": "^9.19.0",
+		"@vscode/test-cli": "^0.0.10",
+		"@vscode/test-electron": "^2.4.1"
+	},
+	"dependencies": {
 		"tmp": "0.0.33",
 		"winreg": "^1.2.4"
 	}
