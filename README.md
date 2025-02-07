@@ -3,16 +3,16 @@
 > **Note:** This extension is under development\
 > **Note:** This extension is only a mod [original extension by kash4kev](https://github.com/kash4kev/vscode-esp8266fs)
 
-Added: LittleFS pack, list and upload
-Added: LittleFS pack and upload ESP32
-Renamed: ESP8266FS to ESPFS
+Added: LittleFS pack, list and upload\
+Added: LittleFS pack and upload ESP32\
+Renamed: ESP8266FS to ESPFS\
 Removed: Unpack, visualize
 
-New keywords:
-espfs.mklittlefs.debugLevel
-espfs.mklittlefs.executable e.g. "c:/arduino/tools/mklittlefs.exe"
-espfs.littlefsImage e.g. "(path)/(Name).mklittlefs.bin"
-espfs.mklittlefs.allFiles
+New keywords:\
+espfs.mklittlefs.debugLevel\
+espfs.mklittlefs.executable e.g. "c:/arduino/tools/mklittlefs.exe"\
+espfs.littlefsImage e.g. "(path)/(Name).mklittlefs.bin"\
+espfs.mklittlefs.allFiles\
 
 mklittlefs.exe <https://github.com/earlephilhower/mklittlefs>
 
@@ -97,8 +97,6 @@ After installing this extension, you need to:
 
 All of the commands send their spew to the ESP8266FS OUTPUT window.  The amount of spew is dictated by the `logLevel`.  Setting it to "debug" will send more spew back to the hosting debugger and has no effect on using the extension.
 
-![Output Window](images/output.png)
-
 | Name                                    | Command id                  | Description                                  |
 | --------------------------------------- |:--------------------------- |:-------------------------------------------- |
 | `ESPFS: Upload LITTLEFS`              | *espfs.uploadLittlefs*    | Upload a LITTLEFS image.                       |
@@ -107,7 +105,6 @@ All of the commands send their spew to the ESP8266FS OUTPUT window.  The amount 
 | `ESPFS: Upload SPIFFS`              | *espfs.uploadSpiffs*    | Upload a SPIFFS image.                       |
 | `ESPFS: Pack SPIFFS`                | *espfs.packSpiffs*      | Creates the SPIFFS image.                    |
 | `ESPFS: List SPIFFS`                | *espfs.listSpiffs*      | List the contents of a SPIFFS image.         |
-
 
 ### Upload
 
