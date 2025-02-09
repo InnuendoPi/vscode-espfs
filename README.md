@@ -1,7 +1,9 @@
 # Visual Studio Code extension for ESP8266/ESP32 File System (SPIFFS/LITTLEFS)
 
 > **Note:** This extension is under development\
-> **Note:** This extension is only a mod [original extension by kash4kev](https://github.com/kash4kev/vscode-esp8266fs)
+> **Note:** ESPFS extension is only a mod from [original extension by kash4kev](https://github.com/kash4kev/vscode-esp8266fs)
+
+![esp8266](images/esp8266.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![esp32](images/esp32.png)
 
 Added: LittleFS pack, list and upload\
 Added: LittleFS pack and upload ESP32\

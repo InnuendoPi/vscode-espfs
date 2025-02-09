@@ -1,9 +1,16 @@
 {
-	"name": "espfs",
-	"displayName": "VSCODE-ESPFS",
+	"name": "vscode-espfs",
+	"displayName": "ESPFS",
 	"description": "Visual Studio Code extension for ESP8266/ESP32 File System (SPIFFS/LittleFS)",
-	"version": "0.0.2",
+	"version": "0.0.4",
+	"preview": false,
 	"publisher": "InnuendoPi",
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"icon": "images/esp8266fs.png",
+    "galleryBanner": {
+        "color": "#00C800",
+        "theme": "light"
+    },
 	"engines": {
 		"vscode": "^1.96.0"
 	},
@@ -22,8 +29,8 @@
 		"ESP8266",
 		"ESP32",
 		"Arduino",
-		"SPIFFS",
 		"LITTLEFS",
+		"SPIFFS",
 		"esptool"
 	],
 	"activationEvents": [

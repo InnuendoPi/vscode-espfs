@@ -527,7 +527,7 @@ function getTarget(arduinoJson, preferences) {
 
     target.flashSize = getPreference(arduinoJson, preferences, "eesz");
     target.flashMode = getPreference(arduinoJson, preferences, "FlashMode", "keep");
-    target.flashFreq = getPreference(arduinoJson, preferences, "FlashFreq", "keep") + "m";
+	target.flashFreq = getPreference(arduinoJson, preferences, "FlashFreq", "keep");
 	
     logDebug(`target:`);
     JSONify(target).split("\n").map(line => logDebug(line));
@@ -1227,8 +1227,7 @@ function _uploadSpiffsEspToolPy(esptool, commPort, spiffsImage, spiffsOptions, t
 
     const flashMode = target.flashMode;
     const flashFreq = target.flashFreq;
-    const flashSize = target.flashSize || "detect";
-	// const flashSize = "detect";
+	const flashSize = "detect";
 	
     logImportant(`SPIFFS Uploading Image... (${spiffsImage})`);
     logSpiffs(`Python   : ${python}`);
@@ -1302,14 +1301,13 @@ function _uploadLittlefsEspToolPy(esptool, commPort, littlefsImage, littlefsOpti
     const resetMethod = littlefsOptions.resetmethod;
     const before = getVscodeConfigValue(ESPFS_ESPTOOL_PY_BEFORE) || "default_reset";
     const after = getVscodeConfigValue(ESPFS_ESPTOOL_PY_AFTER) || "hard_reset";
-    const flashMode = target.flashMode;
-    const flashFreq = target.flashFreq;
-    const flashSize = target.flashSize || "detect";
+	// const flashMode = target.flashMode || "keep";
+    // const flashFreq = target.flashFreq || "keep";
+    // const flashSize = target.flashSize || "keep";
+    const flashMode = "keep";
+    const flashFreq = "keep";
+	const flashSize = "detect";
 	
-    // var flashFreq = target.flashFreq;
-	// if (target.flashFreq == "m")
-		// flashFreq = "40m";
-			
     logImportant(`LITTLEFS Uploading Image... (${littlefsImage})`);
     logLittlefs(`Python   : ${python}`);
     logLittlefs(`EspTool  : ${esptool}`);
