@@ -2,7 +2,7 @@
 
 All notable changes to the "espfs" extension will be documented in this file.
 
-## [0.0.5] 2025-02-08
+## [0.0.6] 2025-02-09
 
 * Fix esptool flashSize
 
