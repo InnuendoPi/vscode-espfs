@@ -729,9 +729,6 @@ function getEspToolsPath(arduinoUserPath, preferencesPath, target) {
 
     const dir = target.architecture == "esp8266"
         ? path.resolve(path.join(preferencesPath, "packages", target.architecture, "tools"))
-        //: path.resolve(path.join(arduinoUserPath, "hardware", target.package, target.architecture, "tools"));
-        //: path.resolve(path.join(preferencesPath, "packages", target.architecture, "hardware", "tools"));
-        // : path.resolve(path.join(preferencesPath, "packages", target.package, "tools"));
         : path.resolve(path.join(preferencesPath, "packages", target.architecture, "tools"))
 
     if (!dirExists(dir))

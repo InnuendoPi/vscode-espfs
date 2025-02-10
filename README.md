@@ -14,9 +14,25 @@ New keywords:\
 espfs.mklittlefs.debugLevel\
 espfs.mklittlefs.executable e.g. "c:/arduino/tools/mklittlefs.exe"\
 espfs.littlefsImage e.g. "(path)/(Name).mklittlefs.bin"\
-espfs.mklittlefs.allFiles\
+espfs.mklittlefs.allFiles
 
-mklittlefs.exe <https://github.com/earlephilhower/mklittlefs>
+recommended [mklittlefs.exe v 4.0.2](https://github.com/earlephilhower/mklittlefs)\
+recommended [esptool.py v 4.8.1](https://github.com/espressif/esptool) _do not use esptool.exe_
+
+*`.vscode/settings.json`*
+
+```json
+{
+    ...
+    //--- mklittlefs 
+    "espfs.mklittlefs.executable": "C:/Arduino/tools/mklittlefs/mklittlefs.exe",
+    //--- Python based esptools
+    "espfs.esptool.executable": "C:/Arduino/tools/esptool/esptool.py",
+    ...
+}
+```
+
+---
 
 Welcome to the Visual Studio extension for the **ESP8266/ESP32 File System SPIFFS/LITTLEFS**.
 
