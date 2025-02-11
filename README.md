@@ -16,8 +16,10 @@ espfs.mklittlefs.executable e.g. "c:/arduino/tools/mklittlefs.exe"\
 espfs.littlefsImage e.g. "(path)/(Name).mklittlefs.bin"\
 espfs.mklittlefs.allFiles
 
-recommended [mklittlefs.exe v 4.0.2](https://github.com/earlephilhower/mklittlefs)\
+recommended [mklittlefs.exe v 3.2.0](https://github.com/earlephilhower/mklittlefs/releases/tag/3.2.0)\
 recommended [esptool.py v 4.8.1](https://github.com/espressif/esptool) _do not use esptool.exe_
+
+> **Note:** with mklittlefs version 4.0.0 an newer LittleFS has been upgraded from 2.5.1 to the latest 2.9.3 release. At release 2.6.0 the on-flash format for LittleFS changed. LittleFS >= 2.6.0 can read 2.5.0 formats but not vice-versa. In most cases, ESP8266/ESP32 users will use version 3.2.0
 
 *`.vscode/settings.json`*
 
@@ -155,11 +157,11 @@ The following Visual Studio Code settings are available for the **ESPFS** extens
     "espfs.dataFiles": "./data",
     "espfs.preferencesPath": "C:/Users/X/AppData/Local/Arduino15",
     "espfs.arduinoUserPath": "C:/Users/X/Documents/Arduino",
-    "espfs.littlefsImage": "./temp/littlefs.image.bin",
+    "espfs.littlefsImage": "./build/littlefs.image.bin",
     "espfs.logLevel": "normal",
 
     "espfs.mklittlefs.executable": "C:/Users/X/AppData/Local/Arduino15/packages/esp8266/tools/mkspiffs/0.2.0/mkspiffs.exe",
-    "espfs.mklittlefs.debugLevel": "0",
+    "espfs.mklittlefs.debugLevel": 0,
     "espfs.mklittlefs.allFiles": true,
 
     "espfs.esptool.executable": "C:/Users/X/AppData/Local/Arduino15/packages/esp8266/tools/esptool/0.4.12/esptool.exe",
@@ -195,6 +197,8 @@ The following Visual Studio Code settings are available for the **ESPFS** extens
 
 * `"espfs.spiffsImage` - Name of the packed **SPIFFS** image.  Default is "**./spiffs.image**".
 
+* `"espfs.littlefsImage` - Name of the packed **LITTLEFS** image.  Default is "**./littlefs.image**".
+
 * `"espfs.logLevel` - Changes the amount of spew produced.  Set to either `normal`, `verbose`, `silent`, or `debug`. Default is **normal**.
 
 ### mkspiffs
@@ -204,6 +208,14 @@ The following Visual Studio Code settings are available for the **ESPFS** extens
 * `"espfs.mkspiffs.debugLevel` - Debug spew level for **mkspiffs**.  Default is **0**.
 
 * `"espfs.mkspiffs.allFiles` - Tells **mkspiffs** to include ignored files (*.DS_Store* and *.git* directories).  Default is **false**.
+
+### mklittlefs
+
+* `"espfs.mklittlefs.executable` - Path to **mkspiffs** executable.  If not specified, then ESP8266FS will attempt to locate it through the Arduino settings.
+
+* `"espfs.mklittlefs.debugLevel` - Debug spew level for **mkspiffs**.  Default is **0**.
+
+* `"espfs.mklittlefs.allFiles` - Tells **mkspiffs** to include ignored files (*.DS_Store* and *.git* directories).  Default is **false**.
 
 ### esptool
 

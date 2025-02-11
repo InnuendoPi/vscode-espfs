@@ -966,7 +966,7 @@ function makeMklittlefsArgs(args) {
     const allFiles = getVscodeConfigValue(ESPFS_MKLITTLEFS_ALL_FILES);
 
     if (allFiles)
-        args.unshift("--all-files", allFiles);
+        args.unshift("--all-files");
 
     const debug = getVscodeConfigValue(ESPFS_MKLITTLEFS_DEBUG_LEVEL);
 
